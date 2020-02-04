@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from './Carousel';
+import Carousel from './SingleSlideCarousel';
 import imagesArray from '../Images/Carousel2Images';
 import useWindowResize from '../Hooks/useWindowSize';
 

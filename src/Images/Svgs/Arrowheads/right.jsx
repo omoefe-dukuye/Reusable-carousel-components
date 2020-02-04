@@ -11,9 +11,9 @@ export default ({ color }) => (
     <polyline
       fill="none"
       stroke={color || '#222'}
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       points="
       0.375,0.375 45.63,38.087 0.375,75.8 "
     />

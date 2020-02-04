@@ -5,7 +5,7 @@ export default ({ color }) => (
     <polyline
       fill="none"
       stroke={color || '#222'}
-      strokeWidth="1"
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
       points="
