@@ -25,7 +25,7 @@ const Carousel = ({ totalSlides, visibleSlides, useDot }) => {
       visibleSlides={visibleSlides || 1}
       infinite
     >
-      <Slider>
+      <Slider className="Slider">
         {totalSlides.map((item, index) => {
           return (
             <Slide
@@ -48,12 +48,15 @@ const Carousel = ({ totalSlides, visibleSlides, useDot }) => {
           <Right className="arrow-right arrow" />
         </ButtonNext>
       </div>
-      {useDot &&
-        totalSlides.map(item => (
-          <Dot>
-            <img src={item} alt="" />
-          </Dot>
-        ))}
+      {useDot && (
+        <div className="Slides">
+          {totalSlides.map((item, index) => (
+            <Dot className="slides" slide={index}>
+              <img src={item} alt="" />
+            </Dot>
+          ))}
+        </div>
+      )}
     </CarouselProvider>
   );
 };
