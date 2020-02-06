@@ -5,7 +5,7 @@ export default ({ color }) => (
     <polyline
       fill="none"
       stroke={color || '#222'}
-      strokeWidth="3"
+      strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
       points="
@@ -13,3 +13,4 @@ export default ({ color }) => (
     />
   </svg>
 );
+// xml:space="preserve"

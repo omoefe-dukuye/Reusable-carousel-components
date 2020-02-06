@@ -4,15 +4,14 @@ import {
   Slider,
   Slide,
   ButtonBack,
-  ButtonNext,
-  Dot
+  ButtonNext
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import classnames from 'classnames';
 import Left from '../Images/Svgs/Arrowheads/left';
 import Right from '../Images/Svgs/Arrowheads/right';
 
-const Carousel = ({ totalSlides, visibleSlides, useDot }) => {
+const Carousel = ({ totalSlides, visibleSlides }) => {
   // const slides = useMemo(() => {
 
   // }, [JSON.stringify(totalSlides)])
@@ -25,20 +24,17 @@ const Carousel = ({ totalSlides, visibleSlides, useDot }) => {
       visibleSlides={visibleSlides || 1}
       infinite
     >
-      <Slider className="Slider">
-        {totalSlides.map((item, index) => {
-          return (
-            <Slide
-              key={index}
-              index={index}
-              className={classnames('slide', {
-                'slide--not-last': index !== totalSlides.length - 1
-              })}
-            >
-              <img src={item} alt="" />
-            </Slide>
-          );
-        })}
+      <Slider>
+        {totalSlides.map((item, index) => (
+          <Slide
+            index={index}
+            className={classnames('slide', {
+              'slide--not-last': index !== totalSlides.length - 1
+            })}
+          >
+            <img src={item} alt="" />
+          </Slide>
+        ))}
       </Slider>
       <div className="arrows">
         <ButtonBack className="button left">
@@ -48,15 +44,6 @@ const Carousel = ({ totalSlides, visibleSlides, useDot }) => {
           <Right className="arrow-right arrow" />
         </ButtonNext>
       </div>
-      {useDot && (
-        <div className="Slides">
-          {totalSlides.map((item, index) => (
-            <Dot className="slides" slide={index}>
-              <img src={item} alt="" />
-            </Dot>
-          ))}
-        </div>
-      )}
     </CarouselProvider>
   );
 };

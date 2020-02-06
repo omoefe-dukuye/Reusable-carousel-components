@@ -11,11 +11,13 @@ export default ({ color }) => (
     <polyline
       fill="none"
       stroke={color || '#222'}
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       points="
       0.375,0.375 45.63,38.087 0.375,75.8 "
     />
   </svg>
 );
+// xmlns:xlink="http://www.w3.org/1999/xlink"
+// xml:space="preserve"

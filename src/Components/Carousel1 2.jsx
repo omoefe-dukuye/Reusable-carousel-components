@@ -1,15 +1,12 @@
 import React from 'react';
 import Carousel from './Carousel';
 import imagesArray from '../Images/Carousel1Images';
-import useWindowResize from '../Hooks/useWindowSize';
 
+// import '../Styles/font-awesome.scss';
 const Carousel1 = () => {
-  const { width } = useWindowResize();
-  const visibleSlides = width < 1080 ? 1 : 3;
-  console.log(width, visibleSlides);
   return (
     <div className="carousel-1-wrapper carousel-wrapper">
-      <Carousel totalSlides={imagesArray} visibleSlides={visibleSlides} />
+      <Carousel totalSlides={imagesArray} visibleSlides={3} />
     </div>
   );
 };

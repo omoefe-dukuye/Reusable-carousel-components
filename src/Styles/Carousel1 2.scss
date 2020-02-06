@@ -1,0 +1,45 @@
+.carousel-1-wrapper {
+  width: 150vw;
+  position: relative;
+  left: -25vw;
+  height: fit-content;
+  img {
+    // max-width: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  .slide--not-last img {
+    padding-right: 50px;
+  }
+
+  .arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+    height: fit-content;
+    z-index: 9;
+    left: 50vw;
+    top: 50%;
+    transform: translate(8%, -100%);
+    .button {
+      border: none;
+      background: none;
+      padding: 10px;
+      height: 50px;
+      width: 50px;
+      &:hover {
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        transition: all 0.4s ease;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .arrow {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

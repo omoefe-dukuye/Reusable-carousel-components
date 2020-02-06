@@ -1,0 +1,194 @@
+.carousel-4-wrapper {
+  height: 100vh;
+  width: 100vw;
+  .carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .Slider {
+      height: 100%;
+      width: 100%;
+      .image-div {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        &-text {
+          font-size: 1rem;
+          font-family: 'Roboto', 'Cerebri Sans';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: left;
+          width: fit-content;
+          backface-visibility: hidden;
+          line-height: 0.1;
+          h1 {
+            margin: 0;
+            word-spacing: 9999rem;
+            line-height: 1.05em;
+            font-weight: 700;
+            font-size: 5rem;
+            @media (max-width: 1200px) {
+              font-size: 4rem;
+            }
+          }
+          button {
+            padding: 0;
+            border: none;
+            border-bottom: 1px solid black;
+            border-width: 90%;
+            margin-bottom: 2px;
+            background: none;
+            h5 {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .carousel__slide--visible {
+        .left {
+          left: 25%;
+          animation: change-opacity 1.2s, left 1.2s;
+        }
+        .right {
+          right: 25%;
+          animation: change-opacity 0.9s ease-in-out, right 0.9s ease-in-out;
+        }
+        .center {
+          text-align: center;
+          right: 50%;
+          transform: translate(50%, -50%);
+          animation: change-opacity 1.2s, center 1.2s;
+          color: #fff;
+          button {
+            border-bottom: 1px solid white;
+            h5 {
+              color: white;
+            }
+          }
+        }
+        @media (max-width: 1200px) {
+          .left {
+            left: 20%;
+          }
+          .right {
+            right: 20%;
+          }
+        }
+      }
+      .carousel__slide--hidden {
+        .image-div-text {
+          opacity: 0;
+        }
+      }
+    }
+    .carousel-dots {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      z-index: 12;
+      width: 25px;
+      bottom: 2%;
+      right: 50%;
+      transform: translateX(50%);
+      // buttons
+      .slides {
+        display: block;
+
+        background: none;
+        border: 0.5px solid #bebebe;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        &:disabled {
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
+
+// .carousel__slide--visible {
+//   .left {
+//     left: 30%;
+//     animation: change-opacity 1s, left 1s;
+//   }
+//   .right {
+//     right: 40%;
+//     animation: change-opacity 1s, right 1s;
+//   }
+//   .center {
+//     text-align: center;
+//     right: 50%;
+//     transform: translateX(-50%);
+//     animation: change-opacity 1s, center 1s;
+//   }
+// }
+
+@keyframes change-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes left {
+  from {
+    left: -25%;
+  }
+  to {
+    left: 25%;
+  }
+}
+
+@keyframes right {
+  from {
+    right: 20%;
+  }
+  to {
+    right: 25%;
+  }
+}
+
+@keyframes center {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  @keyframes left {
+    from {
+      left: -20%;
+    }
+    to {
+      left: 20%;
+    }
+  }
+  @keyframes right {
+    from {
+      right: 15%;
+    }
+    to {
+      right: 20%;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
