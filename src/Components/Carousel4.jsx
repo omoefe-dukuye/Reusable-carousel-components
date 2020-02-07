@@ -1,9 +1,9 @@
 import React from 'react';
-import imgaesArray from '../Images/Carousel4Images';
+import imagesArray from '../Images/Carousel4Images';
 import { CarouselProvider, Slider, Slide, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import classnames from 'classnames';
-import DotSvg from '../Images/Svgs/Dots';
+import Right from '../Images/Svgs/Arrowheads/Right';
 
 const Carousel4 = () => {
   return (
@@ -11,19 +11,19 @@ const Carousel4 = () => {
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}
-        totalSlides={imgaesArray.length}
+        totalSlides={imagesArray.length}
         visibleSlides={1}
         infinite
         interval={10000}
       >
         <Slider className="Slider">
-          {imgaesArray.map(({ pic, text }, index) => {
+          {imagesArray.map(({ pic, text }, index) => {
             return (
               <Slide
                 key={index}
                 index={index}
                 className={classnames('slide', {
-                  'slide--not-last': index !== imgaesArray.length - 1
+                  'slide--not-last': index !== imagesArray.length - 1
                 })}
               >
                 <div
@@ -39,7 +39,8 @@ const Carousel4 = () => {
                     className={classnames('image-div-text', {
                       right: index % 3 === 1,
                       left: index % 3 === 0,
-                      center: index % 3 === 2
+                      center: index % 3 === 2,
+                      'color-white': index % 3 === 2
                     })}
                   >
                     <h5>{text.small}</h5>
@@ -55,9 +56,31 @@ const Carousel4 = () => {
           })}
         </Slider>
         <div className="carousel-dots">
-          {imgaesArray.map(({}, index) => (
+          {imagesArray.map(({}, index) => (
             <Dot className="slides" slide={index}></Dot>
           ))}
+        </div>
+        <div className="carousel-text">
+          {imagesArray.map(({ text: { large, small } }, index) => {
+            let h6;
+            if (small) {
+              h6 = small;
+            } else {
+              [h6, large] = large.split(' ');
+            }
+
+            return (
+              <Dot className="" slide={index}>
+                <h6>{h6}</h6>
+                <h4>{large}</h4>
+              </Dot>
+            );
+          })}
+        </div>
+        <div className="media">
+          <Right />
+          <Right />
+          <Right />
         </div>
       </CarouselProvider>
     </div>
