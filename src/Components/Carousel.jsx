@@ -31,7 +31,10 @@ const Carousel = ({ totalSlides, visibleSlides, useDot }) => {
                 'slide--not-last': index !== totalSlides.length - 1
               })}
             >
-              <img src={item} alt="" />
+              {' '}
+              <a href={item}>
+                <img src={item} alt="" />
+              </a>
             </Slide>
           );
         })}

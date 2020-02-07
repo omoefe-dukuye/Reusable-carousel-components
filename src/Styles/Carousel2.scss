@@ -14,4 +14,9 @@
     top: 50%;
     transform: translate(8%, -60%);
   }
+  @media (max-width: 701px) {
+    .arrows {
+      width: 90%;
+    }
+  }
 }
